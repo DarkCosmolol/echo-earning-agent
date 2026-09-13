@@ -10,9 +10,13 @@
  */
 import { writeFileSync, appendFileSync, readFileSync, unlinkSync } from 'node:fs'
 
-const EVM_WALLET = '0xd194AB36E66BccDD80f19b56757CFe52EdEd49af' // Base USDC receive-only
+const EVM_WALLET = '0xc33710DF2f7BFA8E4c768E6DC4f9d0D1e9c9C835' // Base USDC receive-only
 const BASE_USDC = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
 const now = new Date().toISOString()
+
+// GitHub handle for the PR-bounty watch. MUST be yours — the author's is Echolonius, and
+// leaving it there reports their merged PRs as your earnings. Override with GH_USER env if set.
+const GH_USER = process.env.GH_USER || 'DarkCosmolol'
 
 async function baseUsdc() {
   try {
@@ -161,7 +165,7 @@ async function tokuRail() {
 // authored PRs across the profullstack org; merged = pull_request.merged_at set. Fires once on a rise.
 async function githubPrs() {
   try {
-    const q = encodeURIComponent('author:Echolonius type:pr org:profullstack')
+    const q = encodeURIComponent(`author:${GH_USER} type:pr org:profullstack`)
     const headers = { Accept: 'application/vnd.github+json', 'User-Agent': 'echo-earning-agent' }
     if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
     const r = await fetch(`https://api.github.com/search/issues?q=${q}&per_page=50`, { headers, signal: AbortSignal.timeout(10000) })
@@ -193,7 +197,7 @@ async function hackathonStatus() {
 }
 
 // Solana-side USDC (second payment rail added 2026-07-05; receive-only wallet).
-const SOL_WALLET = '3wbinZDnWmDxHMLtACNrskwZvRwg4KYbBWw1wuviXXHT'
+const SOL_WALLET = '6xzD4WtDCi2fQRRwkPYjNP7bz55AmxskufGA2JJ2fifT'
 async function solUsdc() {
   try {
     const r = await fetch('https://api.mainnet-beta.solana.com', {

@@ -1,6 +1,6 @@
 # Earning agent status
 
-_Last run: 2026-11-14T09:26:35.358Z (UTC), on GitHub Actions._
+_Last run: 2026-11-14T16:07:14.714Z (UTC), on GitHub Actions._
 
 ## 💰 Wallet (real earnings land here)
 - **Base USDC** `0xc33710DF2f7BFA8E4c768E6DC4f9d0D1e9c9C835`: **0**
@@ -11,7 +11,7 @@ _Last run: 2026-11-14T09:26:35.358Z (UTC), on GitHub Actions._
 - https://token-intel-x402.echolonius.deno.net — service **down (HTTP 503)** · paid-route **BROKEN (HTTP 503) — sales path down** · intel **demo BROKEN (HTTP 503) — intel pipeline down** · listed on 402index.io
 
 ## 🔀 Alt rails (widening the net beyond Superteam)
-- **OpenTask** router: **AVAILABLE** · LIVE methods: opentask-router-native, mpp-httpauth, x402-v2 — ACT NOW
+- **OpenTask** router: **HTTP 404** _(watching for revival; speaks x402-v2 our service already supports)_
 - **dealwork.ai** (agent echo-fable): _no DEALWORK_API_KEY secret_
 - **toku.agency** (agent echo-fable, real-USD wallet): _no TOKU_API_KEY secret_
 
